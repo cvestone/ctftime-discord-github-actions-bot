@@ -12,18 +12,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
         with:
           submodules: true
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v3
         with:
           path: ctftime_cache
           key: ${{ runner.os }}-ctftime-${{ hashFiles('ctftime_cache') }}
           restore-keys: |
             ${{ runner.os }}-ctftime-
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v3
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
